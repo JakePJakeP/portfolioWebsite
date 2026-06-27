@@ -1,0 +1,53 @@
+<svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OnlyOdds mobile app mockup">
+  <defs>
+    <linearGradient id="o-bg" x1="0" y1="0" x2="320" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#042f2e"/><stop offset="1" stop-color="#0e7490"/>
+    </linearGradient>
+    <linearGradient id="o-screen" x1="118" y1="28" x2="202" y2="168" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/><stop offset="1" stop-color="#134e4a"/>
+    </linearGradient>
+    <filter id="o-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="o-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="320" height="200" fill="url(#o-bg)"/>
+  <!-- phone frame -->
+  <rect x="108" y="10" width="104" height="180" rx="16" fill="#0a1a1a" stroke="rgba(45,212,191,0.55)" stroke-width="1.5" filter="url(#o-shadow)"/>
+  <rect x="138" y="16" width="44" height="5" rx="2.5" fill="rgba(255,255,255,0.12)"/>
+  <rect x="116" y="26" width="88" height="154" rx="6" fill="url(#o-screen)"/>
+  <!-- status bar -->
+  <text x="124" y="36" fill="rgba(255,255,255,0.4)" font-size="4.5" font-family="ui-monospace,monospace">9:41</text>
+  <circle cx="196" cy="34" r="2" fill="#22c55e"/>
+  <text x="188" y="36" fill="#22c55e" font-size="4" font-weight="bold" font-family="ui-monospace,monospace">LIVE</text>
+  <!-- header -->
+  <text x="124" y="50" fill="rgba(255,255,255,0.85)" font-size="7" font-weight="bold" font-family="system-ui,sans-serif">OnlyOdds</text>
+  <circle cx="196" cy="46" r="6" fill="rgba(45,212,191,0.15)" stroke="rgba(45,212,191,0.4)"/>
+  <circle cx="199" cy="44" r="3" fill="#f43f5e"/>
+  <!-- match card 1 -->
+  <rect x="120" y="56" width="80" height="34" rx="5" fill="rgba(45,212,191,0.08)" stroke="rgba(45,212,191,0.35)" filter="url(#o-glow)"/>
+  <text x="126" y="66" fill="rgba(255,255,255,0.7)" font-size="5" font-weight="600" font-family="system-ui,sans-serif">LAL vs BOS</text>
+  <text x="126" y="76" fill="rgba(45,212,191,0.8)" font-size="4.5" font-family="ui-monospace,monospace">O/U 224.5</text>
+  <rect x="126" y="80" width="36" height="6" rx="3" fill="rgba(45,212,191,0.2)"/><text x="130" y="85" fill="rgba(255,255,255,0.6)" font-size="4" font-family="ui-monospace,monospace">62%</text>
+  <rect x="166" y="80" width="28" height="6" rx="3" fill="rgba(99,102,241,0.25)"/><text x="170" y="85" fill="rgba(255,255,255,0.5)" font-size="4" font-family="ui-monospace,monospace">+140</text>
+  <!-- confidence meter -->
+  <rect x="120" y="94" width="80" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
+  <rect x="120" y="94" width="52" height="4" rx="2" fill="rgba(45,212,191,0.6)"/>
+  <!-- match card 2 -->
+  <rect x="120" y="102" width="80" height="28" rx="5" fill="rgba(255,255,255,0.03)" stroke="rgba(45,212,191,0.2)"/>
+  <text x="126" y="112" fill="rgba(255,255,255,0.55)" font-size="5" font-family="system-ui,sans-serif">KC vs BUF</text>
+  <text x="126" y="122" fill="rgba(255,255,255,0.35)" font-size="4.5" font-family="ui-monospace,monospace">Spread -3.5</text>
+  <text x="170" y="122" fill="rgba(45,212,191,0.7)" font-size="5" font-family="ui-monospace,monospace">48%</text>
+  <!-- favorites -->
+  <text x="124" y="140" fill="rgba(45,212,191,0.6)" font-size="4.5" font-weight="600" font-family="system-ui,sans-serif">Favorites</text>
+  <rect x="120" y="144" width="24" height="14" rx="3" fill="rgba(45,212,191,0.1)" stroke="rgba(45,212,191,0.25)"/>
+  <rect x="148" y="144" width="24" height="14" rx="3" fill="rgba(255,255,255,0.04)" stroke="rgba(45,212,191,0.15)"/>
+  <rect x="176" y="144" width="24" height="14" rx="3" fill="rgba(255,255,255,0.04)" stroke="rgba(45,212,191,0.15)"/>
+  <!-- sparkline chart -->
+  <polyline points="122,168 130,164 138,166 146,158 154,160 162,152 170,154 178,148 186,150 194,144" stroke="rgba(45,212,191,0.5)" stroke-width="1" fill="none"/>
+  <!-- bottom nav -->
+  <rect x="116" y="168" width="88" height="12" rx="0" fill="rgba(0,0,0,0.35)"/>
+  <circle cx="136" cy="174" r="3" fill="rgba(45,212,191,0.7)"/><circle cx="160" cy="174" r="2.5" fill="rgba(255,255,255,0.2)"/><circle cx="184" cy="174" r="2.5" fill="rgba(255,255,255,0.2)"/>
+</svg>

@@ -3,251 +3,1132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaQueries.css">
+    <meta name="description" content="Jake Pajerski — CMU Information Systems student seeking Summer 2027 software engineering internships. Full-stack developer building enterprise systems, mobile apps, and AI-powered tools.">
+    <meta name="keywords" content="Jake Pajerski, software engineering intern, Carnegie Mellon, full-stack developer, Ruby on Rails, React Native">
+    <meta name="author" content="Jake Pajerski">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#09090b">
+    <meta property="og:title" content="Jake Pajerski | Software Engineer">
+    <meta property="og:description" content="CMU student building enterprise software. Seeking Summer 2027 SWE internships.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/hero-headshot.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jake Pajerski | Software Engineer">
+    <meta name="twitter:description" content="CMU Information Systems student building enterprise software. Seeking Summer 2027 SWE internships.">
+    <meta name="twitter:image" content="./assets/hero-headshot.jpg">
+    <title>Jake Pajerski | Software Engineer — CMU</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/elevated.css">
+    <link rel="stylesheet" href="css/project-placeholders.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/polish.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jake Pajerski",
+        "jobTitle": "Software Engineering Intern",
+        "description": "Information Systems student at Carnegie Mellon University seeking Summer 2027 software engineering internships.",
+        "url": "https://github.com/JakePJakeP",
+        "sameAs": ["https://www.linkedin.com/in/jakepajerski", "https://github.com/JakePJakeP", "https://cmu.joinhandshake.com/profiles/jakepajerski"],
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Carnegie Mellon University" },
+        "email": "jkp.11906@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pittsburgh",
+            "addressRegion": "PA",
+            "addressCountry": "US"
+        },
+        "seeks": "Summer 2027 Software Engineering Internship",
+        "knowsAbout": ["Software Engineering", "Full-Stack Development", "Ruby on Rails", "React Native", "PostgreSQL", "Artificial Intelligence"]
+    }
+    </script>
 </head>
 <body>
-    <nav id="desktop-nav">
-        <div class="logo">Jake Pajerski</div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="page-loader" aria-hidden="true">
+        <div class="page-loader__inner">
+            <div class="page-loader__spinner"></div>
+            <span class="page-loader__text">Loading</span>
+        </div>
+    </div>
+
+    <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+    <header class="header" id="header">
+        <nav class="nav container" aria-label="Primary navigation">
+            <a href="#home" class="nav__logo">Jake Pajerski</a>
+            <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="#home" class="nav__link" data-section="home">Home</a></li>
+                <li><a href="#about" class="nav__link" data-section="about">About</a></li>
+                <li><a href="#experience" class="nav__link" data-section="experience">Experience</a></li>
+                <li><a href="#projects" class="nav__link" data-section="projects">Projects</a></li>
+                <li><a href="#skills" class="nav__link" data-section="skills">Skills</a></li>
+                <li><a href="#resume" class="nav__link" data-section="resume">Resume</a></li>
+                <li><a href="#contact" class="nav__link nav__link--cta" data-section="contact">Contact</a></li>
             </ul>
-        </div>
-    </nav>
-    <nav id="hamburger-nav">
-        <div class="logo">Jake Pajerski</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
-    </nav>
-    <section id="profile">
-        <div class="section__pic-container">
-            <img src="./assets/image000000.jpg" alt="Jake Pajerski Profile Picture" id="main-profile-pic">
-        </div>
-        <div class="section__text">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Jake Pajerski</h1>
-            <p class="section__text__p2">CMU IS Student & Aspiring Software Engineer</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onClick="window.open('./assets/Jake_Pajerski_Resume.pdf?v=2')">Download CV</button>
-                <button class="btn btn-color-1" onClick="location.href='#contact'">Contact Info</button>
-            </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onClick="location.href='https://www.linkedin.com/in/jakepajerski'">
-                <img src="./assets/github.png" alt="My GitHub Profile" class="icon" onClick="location.href='https://github.com/JakePJakeP'">
-            </div>
-        </div>
-    </section>
-    <section id="about">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section__pic-container">
-                <img src="./assets/IMG_2293.jpeg" alt="Profile Picture" class="about-pic">
-            </div>
-            <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="./assets/experience.png" alt="Experience Icon" class="icon">
-                        <h3>Experience</h3>
-                        <p>2 years<br>IS & SwE student at CMU</p>
-                    </div>
-                    <div class="details-container">
-                        <img src="./assets/education.png" alt="Education Icon" class="icon">
-                        <h3>Education</h3>
-                        <p>B.Sc. Information Systems<br>Minor: Software Engineering</p>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p>
-                        I am a driven Information Systems student at Carnegie Mellon University with a strong foundation in software development, data management, and applied problem solving. Through coursework and hands-on projects, I have built full-stack applications using Python, JavaScript, C, and SQL, including a cross-platform React Native app with real-time data synchronization and a Python application centered on algorithmic design. My experience includes working as an IT Consultant for a hedge fund, where I refined AI-generated financial content for investor communications, and serving as a Teaching Assistant for software development and AI programs, mentoring students in full-stack development and machine learning concepts. In addition, I bring entrepreneurial experience from founding and operating my own business, and I am eager to apply my technical, analytical, and communication skills to solve real-world problems through technology.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='#experience'">    </section>
-    <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Frontend Development</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>HTML</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>CSS</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>TypeScript</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>React&nbsp;Native</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>Git & GitHub</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Backend Development</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>Python</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>JavaScript</h3>
-                                <p>Intermediate</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>C/C++</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>SQL</h3>
-                                <p>Experienced</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>Supabase</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience Icon" class="icon">
-                            <div>
-                                <h3>MongoDB</h3>
-                                <p>Basic</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='#projects'">    </section>
-    <section id="projects">
-        <p class="section__text__p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/F23_mensatwomens.webp" alt="Project 1" class="project-img">
-                    </div>
-                    <h2 class="experience-sub-title project-title">Pins and Pieces - Fashion App</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/JakePJakeP'">GitHub</button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://youtu.be/gAw29Cg-sfU'">Live Demo</button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/DuquesneIncline.jpg" alt="Project 2" class="project-img">
-                    </div>
-                    <h2 class="experience-sub-title project-title">Duquesne Incline Website</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/JakePJakeP/duquesneInclineProject'">GitHub</button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://drive.google.com/file/d/1aARBBeQ1jDRgS1ydjG83wWFRshrZCDbb/view?usp=drive_link'">Live Demo</button>
-                    </div>
-                </div>
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/E052AF0E-57DE-45A7-8751-BDC32C5A23C2.jpeg" alt="Project 3" class="project-img">
-                    </div>
-                    <h2 class="experience-sub-title project-title">Personal Portfolio Website</h2>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/JakePJakeP/portfolioWebsite'">GitHub</button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.youtube.com/'">Live Demo</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='#contact'">    </section>
-    <section id="contact">
-        <p class="section__text__p1">Get In Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email Icon" class="icon contact-icon email-icon">
-                <p><a href="mailto:jkp.11906@gmail.com">jkp.11906@gmail.com</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="./assets/linkedin.png" alt="LinkedIn Icon" class="icon contact-icon">
-                <p><a href="https://www.linkedin.com/in/jakepajerski">LinkedIn</a></p>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
         </nav>
-        <p>Copyright &#169; 2025 Jake Pajerski. All Rights Reserved.</p>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero -->
+        <section id="home" class="hero section">
+            <div class="hero__grid-bg" aria-hidden="true"></div>
+            <div class="container hero__inner">
+                <div class="hero__content reveal">
+                    <div class="hero__status">
+                        <span class="hero__status-dot" aria-hidden="true"></span>
+                        <span>Available for Summer 2027 SWE Internships</span>
+                    </div>
+                    <p class="hero__eyebrow">Hello, I'm</p>
+                    <h1 class="hero__title">Jake Pajerski</h1>
+                    <p class="hero__headline">Information Systems Student @ Carnegie Mellon University</p>
+                    <p class="hero__subheadline">Software Engineering Minor · Software Engineering Intern</p>
+                    <p class="hero__intro">
+                        I build scalable software that solves real-world problems — from enterprise IT platforms to mobile apps and AI-powered tools.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#projects" class="btn btn--primary">View Projects</a>
+                        <a href="./assets/Jake_Pajerski_Resume.pdf?v=20260626" class="btn btn--secondary" download data-resume>Download Resume</a>
+                    </div>
+                    <div class="hero__socials">
+                        <a href="https://www.linkedin.com/in/jakepajerski" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://github.com/JakePJakeP" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        </a>
+                        <a href="https://cmu.joinhandshake.com/profiles/jakepajerski" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Handshake" id="handshake-link" data-handshake>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.728 0 16.49 24h-4.583l1.87-10.532-4.743 3.893L7.856 24H3.272L7.51 0h4.582L9.806 13.012l4.729-3.862L16.145 0h4.583z"/></svg>
+                        </a>
+                        <a href="mailto:jkp.11906@gmail.com" class="social-link" aria-label="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual reveal reveal--delay">
+                    <div class="hero__composition">
+                        <div class="hero__terminal glass" aria-label="Animated terminal demonstration" role="img">
+                            <div class="terminal__chrome">
+                                <span class="terminal__dot terminal__dot--red"></span>
+                                <span class="terminal__dot terminal__dot--yellow"></span>
+                                <span class="terminal__dot terminal__dot--green"></span>
+                                <span class="terminal__title">jake@cmu — zsh</span>
+                            </div>
+                            <pre class="terminal__body" id="terminal-output" aria-live="polite"></pre>
+                        </div>
+                        <div class="hero__image-wrapper ring-glow">
+                            <div class="hero__orbit hero__orbit--1" aria-hidden="true"></div>
+                            <div class="hero__orbit hero__orbit--2" aria-hidden="true"></div>
+                            <div class="hero__orbit hero__orbit--3" aria-hidden="true"></div>
+                            <img src="./assets/hero-headshot.jpg" alt="Jake Pajerski" class="hero__image" width="400" height="400" loading="eager" fetchpriority="high" decoding="async">
+                            <div class="hero__image-glow" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#metrics" class="hero__scroll" aria-label="Scroll to metrics">
+                <span class="hero__scroll-text">Explore</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </a>
+        </section>
+
+        <!-- Metrics -->
+        <section id="metrics" class="metrics section--compact" aria-label="At a glance metrics">
+            <div class="container">
+                <div class="metrics__grid">
+                    <div class="metric-card reveal reveal--scale">
+                        <div class="metric-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <span class="metric-card__value" data-count="100" data-suffix="+">0</span>
+                        <span class="metric-card__label">Students Mentored</span>
+                    </div>
+                    <div class="metric-card reveal reveal--scale reveal--delay">
+                        <div class="metric-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                        </div>
+                        <span class="metric-card__value" data-count="50" data-suffix="+">0</span>
+                        <span class="metric-card__label">Client Projects</span>
+                    </div>
+                    <div class="metric-card reveal reveal--scale reveal--delay-2">
+                        <div class="metric-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <span class="metric-card__value" data-count="5000" data-prefix="$" data-suffix="+">0</span>
+                        <span class="metric-card__label">Revenue Generated</span>
+                    </div>
+                    <div class="metric-card reveal reveal--scale">
+                        <div class="metric-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <span class="metric-card__value" data-count="5" data-suffix="+">0</span>
+                        <span class="metric-card__label">Major Software Projects</span>
+                    </div>
+                    <div class="metric-card reveal reveal--scale reveal--delay">
+                        <div class="metric-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+                        </div>
+                        <span class="metric-card__value" data-count="3">0</span>
+                        <span class="metric-card__label">Professional Technical Roles</span>
+                    </div>
+                    <div class="metric-card reveal reveal--scale reveal--delay-2">
+                        <div class="metric-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+                        </div>
+                        <span class="metric-card__value" data-count="2028" data-count-plain="true">0</span>
+                        <span class="metric-card__label">CMU Graduation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section">
+            <div class="container">
+                <header class="section-header section-header--center reveal">
+                    <span class="section-label">About</span>
+                    <h2 class="section-title">Engineer, builder, problem solver</h2>
+                </header>
+                <div class="about-panels">
+                    <article class="about-panel about-panel--identity reveal">
+                        <div class="about-panel__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <h3 class="about-panel__title">Who I Am</h3>
+                        <p>Information Systems student at Carnegie Mellon University with a Software Engineering minor. I combine analytical rigor with hands-on engineering to ship software that matters.</p>
+                    </article>
+                    <article class="about-panel about-panel--build reveal reveal--delay">
+                        <div class="about-panel__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <h3 class="about-panel__title">What I Build</h3>
+                        <p>Enterprise web applications, mobile apps, and AI-powered tools. From Rails dashboards with RBAC to React Native apps with real-time sync.</p>
+                    </article>
+                    <article class="about-panel about-panel--interests reveal reveal--delay-2">
+                        <div class="about-panel__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <h3 class="about-panel__title">Current Technical Interests</h3>
+                        <ul class="about-panel__tags">
+                            <li>Full-Stack Development</li>
+                            <li>Enterprise Software</li>
+                            <li>Artificial Intelligence</li>
+                            <li>System Design</li>
+                            <li>Backend Engineering</li>
+                        </ul>
+                    </article>
+                    <article class="about-panel about-panel--beyond reveal reveal--delay-3">
+                        <div class="about-panel__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        </div>
+                        <h3 class="about-panel__title">Beyond Software</h3>
+                        <p>When I'm not coding, you'll find me playing soccer, running, competing in quiz bowl, or reading. Balance keeps me sharp.</p>
+                        <ul class="about-panel__tags about-panel__tags--soft">
+                            <li>Soccer</li>
+                            <li>Running</li>
+                            <li>Quiz Bowl</li>
+                            <li>Reading</li>
+                        </ul>
+                    </article>
+                </div>
+                <aside class="about-education glass reveal">
+                    <div class="about-education__icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="about-education__title">Carnegie Mellon University</h3>
+                        <p class="about-education__detail">B.S. Information Systems · Software Engineering Minor · Expected May 2028</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section section--alt">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-label">Experience</span>
+                    <h2 class="section-title">Impact &amp; outcomes</h2>
+                    <p class="section-subtitle">Accomplishment-focused roles across enterprise software, education, and entrepreneurship.</p>
+                </header>
+                <div class="experience-list">
+                    <article class="exp-card reveal" data-expandable>
+                        <div class="exp-card__main">
+                            <div class="exp-card__media">
+                                <img src="./assets/exp-nemacolin.png" alt="Nemacolin Resort" width="64" height="64" loading="lazy" decoding="async">
+                            </div>
+                            <div class="exp-card__content">
+                                <div class="exp-card__top">
+                                    <div>
+                                        <h3 class="exp-card__role">Software Engineering &amp; IT Intern</h3>
+                                        <p class="exp-card__company">Nemacolin Resort</p>
+                                    </div>
+                                    <time class="exp-card__date" datetime="2026-05">May 2026 – Present</time>
+                                </div>
+                                <ul class="exp-card__impacts">
+                                    <li><strong>Architecting</strong> a full-stack IT Resource Dashboard serving the entire resort's IT operations</li>
+                                    <li><strong>Shipping</strong> 6 core modules: assets, licensing, ticketing, knowledge base, users, and audit logs</li>
+                                    <li><strong>Designing</strong> PostgreSQL schemas, RESTful APIs, and RBAC with comprehensive audit trails</li>
+                                </ul>
+                                <div class="exp-card__tech">
+                                    <span class="exp-card__tech-label">Key Technologies</span>
+                                    <div class="tag-list">
+                                        <span class="tag">Ruby on Rails</span>
+                                        <span class="tag">PostgreSQL</span>
+                                        <span class="tag">Hotwire</span>
+                                        <span class="tag">Turbo</span>
+                                        <span class="tag">Stimulus</span>
+                                        <span class="tag">Tailwind CSS</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="exp-card__expand-link" aria-expanded="false" aria-label="View case study for Nemacolin Resort">
+                                    <span class="exp-card__expand-text">View case study</span>
+                                    <svg class="exp-card__expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="exp-card__extra" hidden>
+                            <div class="exp-case">
+                                <div class="exp-case__block">
+                                    <h4>Project</h4>
+                                    <p>Full-stack IT Resource Dashboard — a unified platform for assets, licensing, ticketing, knowledge base, users, and audit logs.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Problem</h4>
+                                    <p>IT operations were spread across disconnected tools, creating visibility gaps and friction for a resort-scale enterprise infrastructure team.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Solution</h4>
+                                    <p>Architected a modular Rails application with PostgreSQL, RESTful APIs, RBAC, and Hotwire-driven UI — consolidating six operational modules into one dashboard.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Impact</h4>
+                                    <p>Delivered 6 core modules in active development; established patterns for authentication, authorization, and audit logging across the platform.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Technologies</h4>
+                                    <p>Ruby on Rails, PostgreSQL, Hotwire, Turbo, Stimulus, Tailwind CSS, JavaScript</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Lessons Learned</h4>
+                                    <p>Enterprise software rewards upfront schema design and audit logging — retrofitting either at scale is far more costly than building them in from day one.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="exp-card reveal" data-expandable>
+                        <div class="exp-card__main">
+                            <div class="exp-card__media">
+                                <img src="./assets/exp-5thc.png" alt="The 5th C Academy" width="64" height="64" loading="lazy" decoding="async">
+                            </div>
+                            <div class="exp-card__content">
+                                <div class="exp-card__top">
+                                    <div>
+                                        <h3 class="exp-card__role">AI &amp; Software Development Teaching Assistant</h3>
+                                        <p class="exp-card__company">The 5th C Academy</p>
+                                    </div>
+                                    <time class="exp-card__date" datetime="2025-06">June 2025 – Present</time>
+                                </div>
+                                <ul class="exp-card__impacts">
+                                    <li><strong>Mentored 100+</strong> students in software engineering fundamentals and AI concepts</li>
+                                    <li><strong>Led instruction</strong> on Python, JavaScript, APIs, databases, and full-stack development</li>
+                                    <li><strong>Taught</strong> neural networks, prompt engineering, and large language models hands-on</li>
+                                </ul>
+                                <div class="exp-card__tech">
+                                    <span class="exp-card__tech-label">Key Technologies</span>
+                                    <div class="tag-list">
+                                        <span class="tag">Python</span>
+                                        <span class="tag">JavaScript</span>
+                                        <span class="tag">HTML/CSS</span>
+                                        <span class="tag">SQL</span>
+                                        <span class="tag">AI/ML</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="exp-card__expand-link" aria-expanded="false" aria-label="View case study for The 5th C Academy">
+                                    <span class="exp-card__expand-text">View case study</span>
+                                    <svg class="exp-card__expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="exp-card__extra" hidden>
+                            <div class="exp-case">
+                                <div class="exp-case__block">
+                                    <h4>Project</h4>
+                                    <p>Curriculum and hands-on instruction for software engineering and AI fundamentals across 100+ students.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Problem</h4>
+                                    <p>Students needed structured pathways from programming basics to full-stack and AI-powered capstone projects — with individualized support at scale.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Solution</h4>
+                                    <p>Led instruction on Python, JavaScript, APIs, databases, and neural networks; developed materials and mentored students through end-to-end project builds.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Impact</h4>
+                                    <p>Mentored 100+ students; guided capstone applications from concept through deployment-ready prototypes.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Technologies</h4>
+                                    <p>Python, JavaScript, HTML/CSS, SQL, AI/ML concepts, prompt engineering</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Lessons Learned</h4>
+                                    <p>Teaching forces clarity — explaining abstractions to beginners sharpened how I structure code, debug, and communicate technical decisions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="exp-card reveal" data-expandable>
+                        <div class="exp-card__main">
+                            <div class="exp-card__media">
+                                <img src="./assets/exp-soroban.png" alt="Soroban Capital Partners" width="64" height="64" loading="lazy" decoding="async">
+                            </div>
+                            <div class="exp-card__content">
+                                <div class="exp-card__top">
+                                    <div>
+                                        <h3 class="exp-card__role">IT Consultant</h3>
+                                        <p class="exp-card__company">Soroban Capital Partners</p>
+                                    </div>
+                                    <time class="exp-card__date" datetime="2025-07">July 2025 – Present</time>
+                                </div>
+                                <ul class="exp-card__impacts">
+                                    <li><strong>Validated</strong> AI-generated financial transcripts for accuracy and speaker attribution</li>
+                                    <li><strong>Improved</strong> reliability of AI-assisted investor communication workflows</li>
+                                    <li><strong>Ensured</strong> financial terminology and numerical precision across deliverables</li>
+                                </ul>
+                                <div class="exp-card__tech">
+                                    <span class="exp-card__tech-label">Key Technologies</span>
+                                    <div class="tag-list">
+                                        <span class="tag">AI/ML QA</span>
+                                        <span class="tag">Financial Data</span>
+                                        <span class="tag">Prompt Engineering</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="exp-card__expand-link" aria-expanded="false" aria-label="View case study for Soroban Capital Partners">
+                                    <span class="exp-card__expand-text">View case study</span>
+                                    <svg class="exp-card__expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="exp-card__extra" hidden>
+                            <div class="exp-case">
+                                <div class="exp-case__block">
+                                    <h4>Project</h4>
+                                    <p>Quality assurance pipeline for AI-generated financial transcripts and investor communications.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Problem</h4>
+                                    <p>AI-assisted transcript generation introduced accuracy risks — speaker attribution, financial terminology, and numerical precision had to meet institutional standards.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Solution</h4>
+                                    <p>Built systematic QA workflows to validate AI outputs, flag inconsistencies, and collaborate with engineering teams on prompt and pipeline refinements.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Impact</h4>
+                                    <p>Improved reliability of high-volume AI transcript deliverables used in investor communication workflows.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Technologies</h4>
+                                    <p>AI/ML QA, prompt engineering, financial data validation</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Lessons Learned</h4>
+                                    <p>Production AI requires human-in-the-loop validation — domain expertise and systematic QA matter as much as model capability.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="exp-card reveal" data-expandable>
+                        <div class="exp-card__main">
+                            <div class="exp-card__media">
+                                <img src="./assets/exp-ppd.png" alt="Pajerski Precision Detailing" width="64" height="64" loading="lazy" decoding="async">
+                            </div>
+                            <div class="exp-card__content">
+                                <div class="exp-card__top">
+                                    <div>
+                                        <h3 class="exp-card__role">Founder</h3>
+                                        <p class="exp-card__company">Pajerski Precision Detailing</p>
+                                    </div>
+                                    <time class="exp-card__date" datetime="2022-06">June 2022 – Present</time>
+                                </div>
+                                <ul class="exp-card__impacts">
+                                    <li><strong>Generated $5,000+</strong> in revenue across 50+ completed client projects</li>
+                                    <li><strong>Built</strong> end-to-end business operations: scheduling, pricing, and client management</li>
+                                    <li><strong>Developed</strong> customer relationships and operational systems from the ground up</li>
+                                </ul>
+                                <div class="exp-card__tech">
+                                    <span class="exp-card__tech-label">Skills Applied</span>
+                                    <div class="tag-list">
+                                        <span class="tag">Entrepreneurship</span>
+                                        <span class="tag">Operations</span>
+                                        <span class="tag">Client Management</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="exp-card__expand-link" aria-expanded="false" aria-label="View case study for Pajerski Precision Detailing">
+                                    <span class="exp-card__expand-text">View case study</span>
+                                    <svg class="exp-card__expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="exp-card__extra" hidden>
+                            <div class="exp-case">
+                                <div class="exp-case__block">
+                                    <h4>Project</h4>
+                                    <p>End-to-end automotive detailing business — client acquisition, scheduling, fulfillment, and operations.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Problem</h4>
+                                    <p>Launching a service business from scratch required building trust, operational systems, and consistent delivery without existing infrastructure.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Solution</h4>
+                                    <p>Designed pricing, scheduling, and client management workflows; built reputation through quality work and referral-driven growth.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Impact</h4>
+                                    <p>Generated $5,000+ in revenue across 50+ completed client projects over three years.</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Technologies</h4>
+                                    <p>Operations systems, client management, entrepreneurship fundamentals</p>
+                                </div>
+                                <div class="exp-case__block">
+                                    <h4>Lessons Learned</h4>
+                                    <p>Ownership end-to-end — from sales to delivery — taught me accountability and systems thinking that translates directly to shipping software products.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-label">Projects</span>
+                    <h2 class="section-title">Engineering case studies</h2>
+                    <p class="section-subtitle">Deep dives into problems solved, architectures designed, and lessons learned.</p>
+                </header>
+                <div class="case-studies">
+                    <!-- Nemacolin -->
+                    <article class="case-study reveal" id="case-nemacolin">
+                        <div class="case-study__preview">
+                            <div class="case-study__visual-wrap ring-glow">
+                                <div class="project-placeholder project-placeholder--nemacolin" role="img" aria-label="Nemacolin IT Resource Dashboard mockup">
+                                    <div class="project-placeholder__inner">
+                                        <img src="./assets/previews/nemacolin.svg" alt="" width="320" height="200" decoding="async">
+                                    </div>
+                                    <span class="project-placeholder__label">Enterprise Platform</span>
+                                </div>
+                            </div>
+                            <div class="case-study__summary">
+                                <span class="case-study__type">Enterprise Platform</span>
+                                <h3 class="case-study__title">Nemacolin IT Resource Dashboard</h3>
+                                <p class="case-study__hook">Unified IT operations platform replacing fragmented workflows with a single Rails-powered dashboard.</p>
+                                <dl class="project-meta">
+                                    <div><dt>Timeline</dt><dd>May 2026 – Present</dd></div>
+                                    <div><dt>Role</dt><dd>SWE &amp; IT Intern</dd></div>
+                                    <div><dt>Status</dt><dd>In Development</dd></div>
+                                    <div><dt>Type</dt><dd>Enterprise Platform</dd></div>
+                                </dl>
+                                <p class="project-learned"><strong>What I learned:</strong> Schema design and audit logging are foundational in enterprise software — building them in from the start saves months of refactoring later.</p>
+                                <div class="tag-list">
+                                    <span class="tag">Ruby on Rails</span>
+                                    <span class="tag">PostgreSQL</span>
+                                    <span class="tag">Hotwire</span>
+                                    <span class="tag">Tailwind CSS</span>
+                                </div>
+                                <div class="case-study__actions">
+                                    <button class="btn btn--primary btn--sm case-study__open" data-case="nemacolin">Read Case Study</button>
+                                    <a href="https://github.com/JakePJakeP" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- OnlyOdds -->
+                    <article class="case-study reveal" id="case-onlyodds">
+                        <div class="case-study__preview case-study__preview--reverse">
+                            <div class="case-study__visual-wrap ring-glow">
+                                <div class="project-placeholder project-placeholder--onlyodds" role="img" aria-label="OnlyOdds mobile app mockup">
+                                    <div class="project-placeholder__inner">
+                                        <img src="./assets/previews/onlyodds.svg" alt="" width="320" height="200" decoding="async">
+                                    </div>
+                                    <span class="project-placeholder__label">Mobile Application</span>
+                                </div>
+                            </div>
+                            <div class="case-study__summary">
+                                <span class="case-study__type">Mobile Application</span>
+                                <h3 class="case-study__title">OnlyOdds</h3>
+                                <p class="case-study__hook">Microprediction platform with live markets, real-time sync, and a mobile-first experience.</p>
+                                <dl class="project-meta">
+                                    <div><dt>Timeline</dt><dd>2025 – Present</dd></div>
+                                    <div><dt>Role</dt><dd>Full-Stack Developer</dd></div>
+                                    <div><dt>Status</dt><dd>Active</dd></div>
+                                    <div><dt>Type</dt><dd>Mobile Application</dd></div>
+                                </dl>
+                                <p class="project-learned"><strong>What I learned:</strong> Supabase accelerates real-time MVPs, but optimistic UI updates need careful conflict resolution when markets update concurrently.</p>
+                                <div class="tag-list">
+                                    <span class="tag">React Native</span>
+                                    <span class="tag">Supabase</span>
+                                    <span class="tag">PostgreSQL</span>
+                                </div>
+                                <div class="case-study__actions">
+                                    <button class="btn btn--primary btn--sm case-study__open" data-case="onlyodds">Read Case Study</button>
+                                    <a href="https://github.com/JakePJakeP" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Pins & Pieces -->
+                    <article class="case-study reveal" id="case-pins">
+                        <div class="case-study__preview">
+                            <div class="case-study__visual-wrap ring-glow">
+                                <div class="project-placeholder project-placeholder--pins" role="img" aria-label="Pins and Pieces AI wardrobe recommendation mockup">
+                                    <div class="project-placeholder__inner">
+                                        <svg class="pins-preview" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                            <defs>
+                                                <linearGradient id="pins-bg" x1="0" y1="0" x2="320" y2="200" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#1e1033"/><stop offset="1" stop-color="#581c87"/>
+                                                </linearGradient>
+                                                <linearGradient id="pins-glass" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop stop-color="rgba(255,255,255,0.08)"/><stop offset="1" stop-color="rgba(255,255,255,0.02)"/>
+                                                </linearGradient>
+                                                <filter id="pins-shadow"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.45"/></filter>
+                                                <filter id="pins-glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                                            </defs>
+                                            <rect width="320" height="200" fill="url(#pins-bg)"/>
+                                            <text x="50" y="10" text-anchor="middle" fill="rgba(168,85,247,0.55)" font-size="3.5" font-weight="600" font-family="ui-monospace,monospace">UPLOAD</text>
+                                            <text x="160" y="10" text-anchor="middle" fill="rgba(168,85,247,0.55)" font-size="3.5" font-weight="600" font-family="ui-monospace,monospace">ANALYZE</text>
+                                            <text x="270" y="10" text-anchor="middle" fill="rgba(168,85,247,0.55)" font-size="3.5" font-weight="600" font-family="ui-monospace,monospace">RECOMMEND</text>
+                                            <rect x="8" y="14" width="84" height="172" rx="6" fill="url(#pins-glass)" stroke="rgba(168,85,247,0.45)" filter="url(#pins-shadow)"/>
+                                            <text x="16" y="28" fill="rgba(168,85,247,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">UPLOADED ITEMS</text>
+                                            <rect x="14" y="34" width="72" height="30" rx="4" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.35)"/>
+                                            <path d="M22 48 L34 42 L46 48 L44 58 L24 58 Z" fill="rgba(129,140,248,0.3)" stroke="rgba(168,85,247,0.5)"/>
+                                            <text x="52" y="46" fill="rgba(255,255,255,0.55)" font-size="4" font-family="ui-monospace,monospace">Shirt</text>
+                                            <rect x="52" y="50" width="28" height="4" rx="1" fill="rgba(250,204,21,0.35)"/>
+                                            <rect x="14" y="68" width="72" height="30" rx="4" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.3)"/>
+                                            <rect x="22" y="76" width="18" height="16" rx="2" fill="rgba(59,130,246,0.28)" stroke="rgba(168,85,247,0.4)"/>
+                                            <text x="52" y="80" fill="rgba(255,255,255,0.5)" font-size="4" font-family="ui-monospace,monospace">Pants</text>
+                                            <rect x="14" y="102" width="72" height="30" rx="4" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.3)"/>
+                                            <path d="M22 112 L44 112 L48 128 L20 128 Z" fill="rgba(99,102,241,0.2)" stroke="rgba(168,85,247,0.4)"/>
+                                            <text x="52" y="114" fill="rgba(255,255,255,0.5)" font-size="4" font-family="ui-monospace,monospace">Jacket</text>
+                                            <rect x="14" y="136" width="72" height="30" rx="4" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.3)"/>
+                                            <ellipse cx="34" cy="152" rx="10" ry="5" fill="rgba(244,63,94,0.22)" stroke="rgba(168,85,247,0.4)"/>
+                                            <text x="52" y="148" fill="rgba(255,255,255,0.5)" font-size="4" font-family="ui-monospace,monospace">Shoes</text>
+                                            <rect x="14" y="170" width="72" height="10" rx="3" fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.25)" stroke-dasharray="3 2"/>
+                                            <text x="28" y="178" fill="rgba(255,255,255,0.35)" font-size="4" font-family="ui-monospace,monospace">+ Upload</text>
+                                            <rect x="100" y="14" width="120" height="172" rx="6" fill="url(#pins-glass)" stroke="rgba(168,85,247,0.4)" filter="url(#pins-shadow)"/>
+                                            <text x="108" y="28" fill="rgba(168,85,247,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">AI PIPELINE</text>
+                                            <circle class="pins-pulse" cx="160" cy="88" r="14" fill="rgba(99,102,241,0.15)" stroke="rgba(168,85,247,0.6)" filter="url(#pins-glow)"/>
+                                            <circle cx="160" cy="88" r="6" fill="rgba(168,85,247,0.5)"/>
+                                            <text x="160" y="110" text-anchor="middle" fill="rgba(168,85,247,0.8)" font-size="4" font-family="ui-monospace,monospace">Processing</text>
+                                            <circle cx="128" cy="58" r="9" fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.45)"/>
+                                            <text x="128" y="61" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="3.5" font-family="ui-monospace,monospace">Extract</text>
+                                            <circle cx="192" cy="58" r="9" fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.45)"/>
+                                            <text x="192" y="61" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="3.5" font-family="ui-monospace,monospace">Tag</text>
+                                            <circle cx="128" cy="118" r="8" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.35)"/>
+                                            <circle cx="192" cy="118" r="8" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.35)"/>
+                                            <circle cx="160" cy="138" r="10" fill="rgba(99,102,241,0.18)" stroke="rgba(168,85,247,0.55)"/>
+                                            <text x="160" y="141" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="3.5" font-family="ui-monospace,monospace">Match</text>
+                                            <line x1="136" y1="64" x2="152" y2="78" stroke="rgba(168,85,247,0.45)" stroke-width="1"/>
+                                            <line x1="184" y1="64" x2="168" y2="78" stroke="rgba(168,85,247,0.45)" stroke-width="1"/>
+                                            <line x1="152" y1="98" x2="136" y2="112" stroke="rgba(168,85,247,0.35)" stroke-width="1"/>
+                                            <line x1="168" y1="98" x2="184" y2="112" stroke="rgba(168,85,247,0.35)" stroke-width="1"/>
+                                            <line x1="160" y1="126" x2="160" y2="102" stroke="rgba(168,85,247,0.4)" stroke-width="1"/>
+                                            <line x1="92" y1="50" x2="118" y2="58" stroke="rgba(168,85,247,0.5)" stroke-width="1" stroke-dasharray="4 3" class="pins-flow"/>
+                                            <line x1="92" y1="86" x2="118" y2="72" stroke="rgba(168,85,247,0.35)" stroke-width="1" stroke-dasharray="4 3" class="pins-flow"/>
+                                            <line x1="202" y1="88" x2="228" y2="88" stroke="rgba(168,85,247,0.5)" stroke-width="1.2" stroke-dasharray="4 3" class="pins-flow"/>
+                                            <rect x="108" y="156" width="104" height="22" rx="4" fill="rgba(99,102,241,0.1)" stroke="rgba(168,85,247,0.3)"/>
+                                            <text x="116" y="170" fill="rgba(255,255,255,0.45)" font-size="4" font-family="ui-monospace,monospace">Neural graph + backtracking</text>
+                                            <rect x="228" y="14" width="84" height="172" rx="6" fill="url(#pins-glass)" stroke="rgba(168,85,247,0.45)" filter="url(#pins-shadow)"/>
+                                            <text x="236" y="28" fill="rgba(168,85,247,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">OUTFIT</text>
+                                            <rect x="236" y="36" width="68" height="78" rx="4" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.35)"/>
+                                            <path d="M248 50 L260 44 L272 50 L268 72 L252 72 Z" fill="rgba(129,140,248,0.25)" stroke="rgba(168,85,247,0.45)"/>
+                                            <rect x="254" y="58" width="16" height="20" rx="2" fill="rgba(59,130,246,0.28)" stroke="rgba(168,85,247,0.35)"/>
+                                            <path d="M252 78 L272 78 L276 88 L248 88 Z" fill="rgba(99,102,241,0.18)" stroke="rgba(168,85,247,0.35)"/>
+                                            <ellipse cx="262" cy="100" rx="9" ry="4" fill="rgba(244,63,94,0.22)" stroke="rgba(168,85,247,0.4)"/>
+                                            <text x="236" y="124" fill="rgba(255,255,255,0.4)" font-size="4" font-family="ui-monospace,monospace">Similarity</text>
+                                            <text x="288" y="124" text-anchor="end" fill="rgba(134,239,172,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">92%</text>
+                                            <text x="236" y="136" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="ui-monospace,monospace">Palette</text>
+                                            <circle cx="244" cy="144" r="4" fill="#818cf8"/><circle cx="256" cy="144" r="4" fill="#3b82f6"/><circle cx="268" cy="144" r="4" fill="#f59e0b"/><circle cx="280" cy="144" r="4" fill="#f43f5e"/>
+                                            <text x="236" y="158" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="ui-monospace,monospace">AI Confidence</text>
+                                            <rect x="236" y="162" width="68" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+                                            <rect x="236" y="162" width="60" height="6" rx="3" fill="rgba(168,85,247,0.55)"/>
+                                            <text x="288" y="168" text-anchor="end" fill="rgba(168,85,247,0.85)" font-size="4" font-weight="600" font-family="ui-monospace,monospace">94%</text>
+                                            <rect x="236" y="174" width="68" height="8" rx="3" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.35)"/>
+                                            <text x="270" y="180" text-anchor="middle" fill="rgba(134,239,172,0.85)" font-size="4" font-weight="600" font-family="ui-monospace,monospace">Recommended</text>
+                                        </svg>
+                                    </div>
+                                    <span class="project-placeholder__label">Algorithm + Machine Learning</span>
+                                </div>
+                            </div>
+                            <div class="case-study__summary">
+                                <span class="case-study__type">Algorithm + Machine Learning</span>
+                                <h3 class="case-study__title">Pins &amp; Pieces</h3>
+                                <p class="case-study__hook">Wardrobe recommendation engine using image processing, automated tagging, and backtracking outfit generation.</p>
+                                <dl class="project-meta">
+                                    <div><dt>Timeline</dt><dd>2024</dd></div>
+                                    <div><dt>Role</dt><dd>Collaborative Developer</dd></div>
+                                    <div><dt>Status</dt><dd>Completed</dd></div>
+                                    <div><dt>Type</dt><dd>Algorithm + ML</dd></div>
+                                </dl>
+                                <p class="project-learned"><strong>What I learned:</strong> Backtracking with smart pruning beats brute force for combinatorial problems — algorithm choice directly impacts scalability.</p>
+                                <div class="tag-list">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Image Processing</span>
+                                    <span class="tag">Algorithms</span>
+                                </div>
+                                <div class="case-study__actions">
+                                    <button class="btn btn--primary btn--sm case-study__open" data-case="pins">Read Case Study</button>
+                                    <a href="https://github.com/JakePJakeP" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                    <a href="https://youtu.be/gAw29Cg-sfU" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Portfolio -->
+                    <article class="case-study reveal" id="case-portfolio">
+                        <div class="case-study__preview case-study__preview--reverse">
+                            <div class="case-study__visual-wrap ring-glow">
+                                <div class="project-placeholder project-placeholder--portfolio" role="img" aria-label="Personal portfolio website mockup">
+                                    <div class="project-placeholder__inner">
+                                        <img src="./assets/previews/portfolio.svg" alt="" width="320" height="200" decoding="async">
+                                    </div>
+                                    <span class="project-placeholder__label">Web Development</span>
+                                </div>
+                            </div>
+                            <div class="case-study__summary">
+                                <span class="case-study__type">Web Development</span>
+                                <h3 class="case-study__title">Personal Portfolio</h3>
+                                <p class="case-study__hook">This site — engineered for performance, accessibility, and recruiter-first storytelling.</p>
+                                <dl class="project-meta">
+                                    <div><dt>Timeline</dt><dd>2026</dd></div>
+                                    <div><dt>Role</dt><dd>Designer &amp; Developer</dd></div>
+                                    <div><dt>Status</dt><dd>Live</dd></div>
+                                    <div><dt>Type</dt><dd>Web Development</dd></div>
+                                </dl>
+                                <p class="project-learned"><strong>What I learned:</strong> Content hierarchy and intentional UX matter more than visual effects — recruiters engage with clarity before polish.</p>
+                                <div class="tag-list">
+                                    <span class="tag">HTML</span>
+                                    <span class="tag">CSS</span>
+                                    <span class="tag">JavaScript</span>
+                                </div>
+                                <div class="case-study__actions">
+                                    <button class="btn btn--primary btn--sm case-study__open" data-case="portfolio">Read Case Study</button>
+                                    <a href="https://github.com/JakePJakeP/portfolioWebsite" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                    <a href="#home" class="btn btn--ghost btn--sm">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Duquesne -->
+                    <article class="case-study reveal" id="case-duquesne">
+                        <div class="case-study__preview">
+                            <div class="case-study__visual-wrap ring-glow">
+                                <div class="project-placeholder project-placeholder--duquesne" role="img" aria-label="Duquesne Incline website mockup">
+                                    <div class="project-placeholder__inner">
+                                        <img src="./assets/previews/duquesne.svg" alt="" width="320" height="200" decoding="async">
+                                    </div>
+                                    <span class="project-placeholder__label">Responsive Web Design</span>
+                                </div>
+                            </div>
+                            <div class="case-study__summary">
+                                <span class="case-study__type">Informational Web</span>
+                                <h3 class="case-study__title">Duquesne Incline Website</h3>
+                                <p class="case-study__hook">Responsive informational site showcasing Pittsburgh's historic landmark with modern web standards.</p>
+                                <dl class="project-meta">
+                                    <div><dt>Timeline</dt><dd>2023</dd></div>
+                                    <div><dt>Role</dt><dd>Front-End Developer</dd></div>
+                                    <div><dt>Status</dt><dd>Completed</dd></div>
+                                    <div><dt>Type</dt><dd>Informational Web</dd></div>
+                                </dl>
+                                <p class="project-learned"><strong>What I learned:</strong> Information architecture is as critical as visual design — scannable structure keeps dense content accessible on mobile.</p>
+                                <div class="tag-list">
+                                    <span class="tag">HTML</span>
+                                    <span class="tag">CSS</span>
+                                    <span class="tag">JavaScript</span>
+                                </div>
+                                <div class="case-study__actions">
+                                    <button class="btn btn--primary btn--sm case-study__open" data-case="duquesne">Read Case Study</button>
+                                    <a href="https://github.com/JakePJakeP/duquesneInclineProject" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                    <a href="https://drive.google.com/file/d/1aARBBeQ1jDRgS1ydjG83wWFRshrZCDbb/view?usp=drive_link" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Modal -->
+        <div class="case-modal" id="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-title" hidden>
+            <div class="case-modal__backdrop" data-close-modal></div>
+            <div class="case-modal__panel glass">
+                <button class="case-modal__close" aria-label="Close case study" data-close-modal>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+                <div class="case-modal__content" id="case-modal-content"></div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <section id="skills" class="section section--alt">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-label">Skills</span>
+                    <h2 class="section-title">Technologies in practice</h2>
+                    <p class="section-subtitle">Every skill is backed by real projects and professional experience.</p>
+                </header>
+                <div class="skills-showcase">
+                    <div class="skills-category reveal">
+                        <h3 class="skills-category__title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            Languages
+                        </h3>
+                        <div class="skills-category__grid">
+                            <div class="skill-chip" tabindex="0" data-projects="pins">
+                                <span class="skill-chip__name">Python</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Pins &amp; Pieces</span>
+                                    <span class="skill-chip__tag">5th C Academy</span>
+                                    <span class="skill-chip__tag">3+ years</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="onlyodds,portfolio,duquesne">
+                                <span class="skill-chip__name">JavaScript</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">OnlyOdds</span>
+                                    <span class="skill-chip__tag skill-chip__tag--project">Portfolio</span>
+                                    <span class="skill-chip__tag">5th C Academy</span>
+                                    <span class="skill-chip__tag">4+ years</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin">
+                                <span class="skill-chip__name">Ruby</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin Dashboard</span>
+                                    <span class="skill-chip__tag">Nemacolin Internship</span>
+                                    <span class="skill-chip__tag">2+ years</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin,onlyodds">
+                                <span class="skill-chip__name">SQL</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin</span>
+                                    <span class="skill-chip__tag skill-chip__tag--project">OnlyOdds</span>
+                                    <span class="skill-chip__tag">CMU Coursework</span>
+                                    <span class="skill-chip__tag">3+ years</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0">
+                                <span class="skill-chip__name">C</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag">CMU Systems Programming</span>
+                                    <span class="skill-chip__tag">1+ year</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="portfolio,duquesne">
+                                <span class="skill-chip__name">HTML / CSS</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Portfolio</span>
+                                    <span class="skill-chip__tag skill-chip__tag--project">Duquesne Incline</span>
+                                    <span class="skill-chip__tag">4+ years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category reveal reveal--delay">
+                        <h3 class="skills-category__title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                            Frameworks &amp; Tools
+                        </h3>
+                        <div class="skills-category__grid">
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin">
+                                <span class="skill-chip__name">Ruby on Rails</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin Dashboard</span>
+                                    <span class="skill-chip__tag">Nemacolin Internship</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="onlyodds">
+                                <span class="skill-chip__name">React Native</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">OnlyOdds</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin">
+                                <span class="skill-chip__name">Hotwire / Turbo / Stimulus</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin Dashboard</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin">
+                                <span class="skill-chip__name">Tailwind CSS</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin Dashboard</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0">
+                                <span class="skill-chip__name">Git &amp; GitHub</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">All Projects</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0">
+                                <span class="skill-chip__name">Linux</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag">Development Environment</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="portfolio">
+                                <span class="skill-chip__name">Netlify</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Portfolio</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-category reveal reveal--delay-2">
+                        <h3 class="skills-category__title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                            Databases &amp; Concepts
+                        </h3>
+                        <div class="skills-category__grid">
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin,onlyodds">
+                                <span class="skill-chip__name">PostgreSQL</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin</span>
+                                    <span class="skill-chip__tag skill-chip__tag--project">OnlyOdds</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0">
+                                <span class="skill-chip__name">MySQL / SQLite</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag">CMU Coursework</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0">
+                                <span class="skill-chip__name">MongoDB</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag">CMU Projects</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="onlyodds">
+                                <span class="skill-chip__name">Supabase</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">OnlyOdds</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin,onlyodds">
+                                <span class="skill-chip__name">System Design</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin</span>
+                                    <span class="skill-chip__tag skill-chip__tag--project">OnlyOdds</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0" data-projects="nemacolin,onlyodds">
+                                <span class="skill-chip__name">RESTful APIs</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag skill-chip__tag--project">Nemacolin</span>
+                                    <span class="skill-chip__tag skill-chip__tag--project">OnlyOdds</span>
+                                </div>
+                            </div>
+                            <div class="skill-chip" tabindex="0">
+                                <span class="skill-chip__name">AI &amp; Prompt Engineering</span>
+                                <div class="skill-chip__meta">
+                                    <span class="skill-chip__tag">5th C Academy</span>
+                                    <span class="skill-chip__tag">Soroban Capital</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume -->
+        <section id="resume" class="section">
+            <div class="container">
+                <header class="section-header section-header--center reveal">
+                    <span class="section-label">Resume</span>
+                    <h2 class="section-title">Recruiter snapshot</h2>
+                    <p class="section-subtitle">Everything you need in 30 seconds — full PDF below.</p>
+                </header>
+                <div class="resume-summary reveal">
+                    <h3 class="resume-summary__title">Jake Pajerski</h3>
+                    <div class="resume-summary__grid">
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Education</span>
+                            <p class="resume-summary__value">B.S. Information Systems, CMU · SWE Minor · May 2028</p>
+                        </div>
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Current Role</span>
+                            <p class="resume-summary__value">SWE &amp; IT Intern @ Nemacolin Resort</p>
+                        </div>
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Seeking</span>
+                            <p class="resume-summary__value">Summer 2027 Software Engineering Internships</p>
+                        </div>
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Core Technologies</span>
+                            <p class="resume-summary__value">Ruby on Rails · PostgreSQL · React Native · Python · JavaScript</p>
+                        </div>
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Work Authorization</span>
+                            <p class="resume-summary__value">Authorized to work in the United States</p>
+                        </div>
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Expected Graduation</span>
+                            <p class="resume-summary__value">May 2028</p>
+                        </div>
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Availability</span>
+                            <p class="resume-summary__value">Summer 2027 · Open to relocation &amp; remote</p>
+                        </div>
+                        <div class="resume-summary__item">
+                            <span class="resume-summary__label">Location</span>
+                            <p class="resume-summary__value">Pittsburgh, PA</p>
+                        </div>
+                    </div>
+                    <div class="resume-availability" aria-label="Availability highlights">
+                        <span>Available Summer 2027</span>
+                        <span>Open to relocation</span>
+                        <span>Open to remote</span>
+                    </div>
+                    <div class="resume-summary__highlights">
+                        <div class="resume-highlight"><strong>100+</strong> students mentored as a TA</div>
+                        <div class="resume-highlight"><strong>6</strong> enterprise modules shipped at Nemacolin</div>
+                        <div class="resume-highlight"><strong>5+</strong> full-stack projects built end-to-end</div>
+                        <div class="resume-highlight"><strong>$5K+</strong> revenue from founded business</div>
+                    </div>
+                    <details class="resume-preview">
+                        <summary>Preview resume PDF</summary>
+                        <iframe src="./assets/Jake_Pajerski_Resume.pdf?v=20260626" title="Jake Pajerski Resume Preview" loading="lazy"></iframe>
+                    </details>
+                    <div class="resume-summary__cta">
+                        <a href="./assets/Jake_Pajerski_Resume.pdf?v=20260626" class="btn btn--primary btn--lg" download data-resume>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download Resume
+                        </a>
+                        <a href="./assets/Jake_Pajerski_Resume.pdf?v=20260626" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer" data-resume>View PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section section--alt">
+            <div class="container">
+                <div class="contact-cta reveal">
+                    <div class="contact-cta__badge">
+                        <span class="contact-cta__dot" aria-hidden="true"></span>
+                        Open to opportunities
+                    </div>
+                    <h2 class="contact-cta__title">Let's build something together</h2>
+                    <p class="contact-cta__text">
+                        I'm actively seeking <strong>Summer 2027 Software Engineering internship</strong> opportunities at companies where I can contribute to impactful, well-engineered products. I'd love to connect.
+                    </p>
+                    <div class="contact-cta__actions">
+                        <a href="mailto:jkp.11906@gmail.com" class="btn btn--primary btn--lg">Send an Email</a>
+                        <a href="https://www.linkedin.com/in/jakepajerski" class="btn btn--secondary btn--lg" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+                    </div>
+                </div>
+                <div class="contact-info-strip reveal" aria-label="Contact details">
+                    <span><strong>Location</strong> Pittsburgh, PA</span>
+                    <span><strong>Availability</strong> Summer 2027 internships</span>
+                    <span><strong>Response time</strong> Within 24 hours</span>
+                    <span><strong>Remote</strong> Open</span>
+                    <span><strong>Relocation</strong> Open</span>
+                </div>
+                <div class="contact-grid reveal">
+                    <a href="mailto:jkp.11906@gmail.com" class="contact-card">
+                        <div class="contact-card__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-card__label">Email</span>
+                            <span class="contact-card__value">jkp.11906@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jakepajerski" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-card__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-card__label">LinkedIn</span>
+                            <span class="contact-card__value">jakepajerski</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/JakePJakeP" class="contact-card" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-card__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-card__label">GitHub</span>
+                            <span class="contact-card__value">JakePJakeP</span>
+                        </div>
+                    </a>
+                    <a href="https://cmu.joinhandshake.com/profiles/jakepajerski" class="contact-card" target="_blank" rel="noopener noreferrer" data-handshake>
+                        <div class="contact-card__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.728 0 16.49 24h-4.583l1.87-10.532-4.743 3.893L7.856 24H3.272L7.51 0h4.582L9.806 13.012l4.729-3.862L16.145 0h4.583z"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-card__label">Handshake</span>
+                            <span class="contact-card__value">View Profile</span>
+                        </div>
+                    </a>
+                    <a href="#home" class="contact-card">
+                        <div class="contact-card__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-card__label">Portfolio</span>
+                            <span class="contact-card__value">You're here</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__copy">&copy; <span id="year"></span> Jake Pajerski. All rights reserved.</p>
+            <nav class="footer__nav" aria-label="Footer navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js/data.js" defer></script>
+    <script src="js/case-studies.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/polish.js" defer></script>
 </body>
 </html>

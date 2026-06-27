@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pins and Pieces AI wardrobe recommendation mockup">
+  <defs>
+    <linearGradient id="pins-bg" x1="0" y1="0" x2="320" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1e1033"/><stop offset="1" stop-color="#581c87"/>
+    </linearGradient>
+    <linearGradient id="pins-glass" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="rgba(255,255,255,0.08)"/><stop offset="1" stop-color="rgba(255,255,255,0.02)"/>
+    </linearGradient>
+    <filter id="pins-shadow"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.45"/></filter>
+    <filter id="pins-glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="320" height="200" fill="url(#pins-bg)"/>
+  <text x="50" y="10" text-anchor="middle" fill="rgba(168,85,247,0.55)" font-size="3.5" font-weight="600" font-family="ui-monospace,monospace">UPLOAD</text>
+  <text x="160" y="10" text-anchor="middle" fill="rgba(168,85,247,0.55)" font-size="3.5" font-weight="600" font-family="ui-monospace,monospace">ANALYZE</text>
+  <text x="270" y="10" text-anchor="middle" fill="rgba(168,85,247,0.55)" font-size="3.5" font-weight="600" font-family="ui-monospace,monospace">RECOMMEND</text>
+  <!-- LEFT: uploads -->
+  <rect x="8" y="14" width="84" height="172" rx="6" fill="url(#pins-glass)" stroke="rgba(168,85,247,0.45)" filter="url(#pins-shadow)"/>
+  <text x="16" y="28" fill="rgba(168,85,247,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">UPLOADED ITEMS</text>
+  <rect x="14" y="34" width="72" height="30" rx="4" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.35)"/>
+  <path d="M22 48 L34 42 L46 48 L44 58 L24 58 Z" fill="rgba(129,140,248,0.3)" stroke="rgba(168,85,247,0.5)"/>
+  <text x="52" y="46" fill="rgba(255,255,255,0.55)" font-size="4" font-family="ui-monospace,monospace">Shirt</text>
+  <rect x="52" y="50" width="28" height="4" rx="1" fill="rgba(250,204,21,0.35)"/>
+  <rect x="14" y="68" width="72" height="30" rx="4" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.3)"/>
+  <rect x="22" y="76" width="18" height="16" rx="2" fill="rgba(59,130,246,0.28)" stroke="rgba(168,85,247,0.4)"/>
+  <text x="52" y="80" fill="rgba(255,255,255,0.5)" font-size="4" font-family="ui-monospace,monospace">Pants</text>
+  <rect x="14" y="102" width="72" height="30" rx="4" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.3)"/>
+  <path d="M22 112 L44 112 L48 128 L20 128 Z" fill="rgba(99,102,241,0.2)" stroke="rgba(168,85,247,0.4)"/>
+  <text x="52" y="114" fill="rgba(255,255,255,0.5)" font-size="4" font-family="ui-monospace,monospace">Jacket</text>
+  <rect x="14" y="136" width="72" height="30" rx="4" fill="rgba(168,85,247,0.06)" stroke="rgba(168,85,247,0.3)"/>
+  <ellipse cx="34" cy="152" rx="10" ry="5" fill="rgba(244,63,94,0.22)" stroke="rgba(168,85,247,0.4)"/>
+  <text x="52" y="148" fill="rgba(255,255,255,0.5)" font-size="4" font-family="ui-monospace,monospace">Shoes</text>
+  <rect x="14" y="170" width="72" height="10" rx="3" fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.25)" stroke-dasharray="3 2"/>
+  <text x="28" y="178" fill="rgba(255,255,255,0.35)" font-size="4" font-family="ui-monospace,monospace">+ Upload</text>
+  <!-- CENTER: AI pipeline -->
+  <rect x="100" y="14" width="120" height="172" rx="6" fill="url(#pins-glass)" stroke="rgba(168,85,247,0.4)" filter="url(#pins-shadow)"/>
+  <text x="108" y="28" fill="rgba(168,85,247,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">AI PIPELINE</text>
+  <circle cx="160" cy="88" r="14" fill="rgba(99,102,241,0.15)" stroke="rgba(168,85,247,0.6)" filter="url(#pins-glow)"/>
+  <circle cx="160" cy="88" r="6" fill="rgba(168,85,247,0.5)"/>
+  <text x="160" y="110" text-anchor="middle" fill="rgba(168,85,247,0.8)" font-size="4" font-family="ui-monospace,monospace">Processing</text>
+  <circle cx="128" cy="58" r="9" fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.45)"/>
+  <text x="128" y="61" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="3.5" font-family="ui-monospace,monospace">Extract</text>
+  <circle cx="192" cy="58" r="9" fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.45)"/>
+  <text x="192" y="61" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="3.5" font-family="ui-monospace,monospace">Tag</text>
+  <circle cx="128" cy="118" r="8" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.35)"/>
+  <circle cx="192" cy="118" r="8" fill="rgba(168,85,247,0.1)" stroke="rgba(168,85,247,0.35)"/>
+  <circle cx="160" cy="138" r="10" fill="rgba(99,102,241,0.18)" stroke="rgba(168,85,247,0.55)"/>
+  <text x="160" y="141" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="3.5" font-family="ui-monospace,monospace">Match</text>
+  <line x1="136" y1="64" x2="152" y2="78" stroke="rgba(168,85,247,0.45)" stroke-width="1"/>
+  <line x1="184" y1="64" x2="168" y2="78" stroke="rgba(168,85,247,0.45)" stroke-width="1"/>
+  <line x1="152" y1="98" x2="136" y2="112" stroke="rgba(168,85,247,0.35)" stroke-width="1"/>
+  <line x1="168" y1="98" x2="184" y2="112" stroke="rgba(168,85,247,0.35)" stroke-width="1"/>
+  <line x1="160" y1="126" x2="160" y2="102" stroke="rgba(168,85,247,0.4)" stroke-width="1"/>
+  <line x1="92" y1="50" x2="118" y2="58" stroke="rgba(168,85,247,0.5)" stroke-width="1" stroke-dasharray="4 3" class="pins-flow"/>
+  <line x1="92" y1="86" x2="118" y2="72" stroke="rgba(168,85,247,0.35)" stroke-width="1" stroke-dasharray="4 3" class="pins-flow"/>
+  <line x1="202" y1="88" x2="228" y2="88" stroke="rgba(168,85,247,0.5)" stroke-width="1.2" stroke-dasharray="4 3" class="pins-flow"/>
+  <rect x="108" y="156" width="104" height="22" rx="4" fill="rgba(99,102,241,0.1)" stroke="rgba(168,85,247,0.3)"/>
+  <text x="116" y="170" fill="rgba(255,255,255,0.45)" font-size="4" font-family="ui-monospace,monospace">Neural graph + backtracking</text>
+  <!-- RIGHT: outfit -->
+  <rect x="228" y="14" width="84" height="172" rx="6" fill="url(#pins-glass)" stroke="rgba(168,85,247,0.45)" filter="url(#pins-shadow)"/>
+  <text x="236" y="28" fill="rgba(168,85,247,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">OUTFIT</text>
+  <rect x="236" y="36" width="68" height="78" rx="4" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.35)"/>
+  <path d="M248 50 L260 44 L272 50 L268 72 L252 72 Z" fill="rgba(129,140,248,0.25)" stroke="rgba(168,85,247,0.45)"/>
+  <rect x="254" y="58" width="16" height="20" rx="2" fill="rgba(59,130,246,0.28)" stroke="rgba(168,85,247,0.35)"/>
+  <path d="M252 78 L272 78 L276 88 L248 88 Z" fill="rgba(99,102,241,0.18)" stroke="rgba(168,85,247,0.35)"/>
+  <ellipse cx="262" cy="100" rx="9" ry="4" fill="rgba(244,63,94,0.22)" stroke="rgba(168,85,247,0.4)"/>
+  <text x="236" y="124" fill="rgba(255,255,255,0.4)" font-size="4" font-family="ui-monospace,monospace">Similarity</text>
+  <text x="288" y="124" text-anchor="end" fill="rgba(134,239,172,0.9)" font-size="5" font-weight="700" font-family="ui-monospace,monospace">92%</text>
+  <text x="236" y="136" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="ui-monospace,monospace">Palette</text>
+  <circle cx="244" cy="144" r="4" fill="#818cf8"/><circle cx="256" cy="144" r="4" fill="#3b82f6"/><circle cx="268" cy="144" r="4" fill="#f59e0b"/><circle cx="280" cy="144" r="4" fill="#f43f5e"/>
+  <text x="236" y="158" fill="rgba(255,255,255,0.35)" font-size="3.5" font-family="ui-monospace,monospace">AI Confidence</text>
+  <rect x="236" y="162" width="68" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="236" y="162" width="60" height="6" rx="3" fill="rgba(168,85,247,0.55)"/>
+  <text x="288" y="168" text-anchor="end" fill="rgba(168,85,247,0.85)" font-size="4" font-weight="600" font-family="ui-monospace,monospace">94%</text>
+  <rect x="236" y="174" width="68" height="8" rx="3" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.35)"/>
+  <text x="270" y="180" text-anchor="middle" fill="rgba(134,239,172,0.85)" font-size="4" font-weight="600" font-family="ui-monospace,monospace">Recommended</text>
+</svg>
