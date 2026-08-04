@@ -469,6 +469,11 @@
     color: var(--text-muted);
 }
 
+.about-education__detail + .about-education__detail {
+    margin-top: 0.5rem;
+    line-height: 1.55;
+}
+
 /* ==========================================================================
    Experience cards
    ========================================================================== */

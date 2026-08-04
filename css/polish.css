@@ -81,7 +81,12 @@
     box-shadow: var(--card-shadow-hover);
 }
 
-/* Buttons — consistent */
+.btn[aria-disabled="true"] {
+    opacity: 0.65;
+    pointer-events: none;
+    cursor: default;
+}
+
 .btn {
     min-height: 44px;
     padding: 0.625rem 1.5rem;
