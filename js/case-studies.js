@@ -58,9 +58,9 @@
             ],
             github: null,
             privateRepo: true,
-            demo: null,
+            demo: 'https://apps.apple.com/us/app/onlyodds/id6754545089',
+            demoLabel: 'App Store',
         },
-        pins: {
             title: 'Pins & Pieces',
             type: 'Algorithm + Image Processing',
             problem: 'Users needed an outfit recommendation engine that could turn wardrobe photos into structured garment data and generate combinations under clothing constraints.',
@@ -156,8 +156,8 @@
                     : '',
             data.demo
                 ? data.demo.startsWith('#')
-                    ? `<a href="${data.demo}" class="btn btn--ghost btn--sm">Live Demo</a>`
-                    : `<a href="${data.demo}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">Live Demo</a>`
+                    ? `<a href="${data.demo}" class="btn btn--ghost btn--sm">${data.demoLabel || 'Live Demo'}</a>`
+                    : `<a href="${data.demo}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer">${data.demoLabel || 'Live Demo'}</a>`
                 : '',
         ].join('');
 

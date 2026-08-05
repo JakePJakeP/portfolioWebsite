@@ -2,7 +2,7 @@
  * Shared portfolio content
  */
 window.PORTFOLIO_DATA = {
-    resumeUrl: './assets/Jake_Pajerski_Resume.pdf?v=20260804',
+    resumeUrl: './assets/Jake_Pajerski_Resume.pdf?v=20260805',
     handshakeUrl: 'https://cmu.joinhandshake.com/profiles/jakepajerski',
 
     terminalLines: [
