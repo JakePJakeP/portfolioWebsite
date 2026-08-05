@@ -61,6 +61,7 @@
             demo: 'https://apps.apple.com/us/app/onlyodds/id6754545089',
             demoLabel: 'App Store',
         },
+        pins: {
             title: 'Pins & Pieces',
             type: 'Algorithm + Image Processing',
             problem: 'Users needed an outfit recommendation engine that could turn wardrobe photos into structured garment data and generate combinations under clothing constraints.',
